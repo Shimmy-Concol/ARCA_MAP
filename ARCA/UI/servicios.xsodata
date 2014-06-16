@@ -1,0 +1,21 @@
+service namespace "servicios.mapa.arca" {
+	"HANAADMIN"."CAPA1" as "CAPA1S" keys generate local "id_CAPA1";
+	"HANAADMIN"."GENERAL" as "GENERALS" keys generate local "id_general";
+	"HANAADMIN"."CLIENTES_TOTALES" as "CONSULTA" keys generate local "id_customer";
+	"HANAADMIN"."MARCA" as "MARCAS" keys generate local "id_marca";
+	"HANAADMIN"."PRESENTACION" as "PRESENTACIONES" keys generate local "id_presentacion";
+	"HANAADMIN"."CEDI" as "CEDIS" keys generate local "id_cedi";
+	"HANAADMIN"."ZONA" as "ZONAS" keys generate local "id_zona";
+	"HANAADMIN"."RUTA" as "RUTAS" keys generate local "id_ruta";
+	"HANAADMIN"."DIA" as "DIAS" keys generate local "id_dia";
+	"HANAADMIN"."MES" as "MES" keys generate local "id_mes";
+	"HANAADMIN"."ACT_ISSCOM" as "ACT_ISSCOMS" keys generate local "id_ACT_ISSCOM";
+	"HANAADMIN"."ISSCOM" as "ISSCOMS" keys generate local "id_ISSCOM";
+	"HANAADMIN"."RETORNABILIDAD" as "RETORNABILIDADS" keys generate local "id_RETORNABILIDAD";
+	"HANAADMIN"."RGM" as "RGMS" keys generate local "id_RGM";
+	"HANAADMIN"."SEGMENTO" as "SEGMENTOS" keys generate local "id_SEGMENTO";
+	"HANAADMIN"."SUB_CANAL" as "SUB_CANALS" keys generate local "id_SUB_CANAL";
+	"HANAADMIN"."TAMANIO" as "TAMANIOS" keys generate local "id_TAMANIO";
+	"HANAADMIN"."TAMANIO_CUS" as "TAMANIO_CUSS" keys generate local "id_TAMANIO_CUS";
+	"_SYS_BIC"."ARCA.BD/CA_GENERAL2" as "NUEVO" keys generate local "id";
+}

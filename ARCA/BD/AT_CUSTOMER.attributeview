@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_CUSTOMER" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard" applyPrivilegeType="ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="AT_CUSTOMER"/>
+  <metadata changedAt="2014-05-26 11:18:10.418"/>
+  <attributes>
+    <attribute id="SID" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="SID"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SCUSTOMER" columnName="SID"/>
+    </attribute>
+    <attribute id="CUSTOMER" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="CUSTOMER"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SCUSTOMER" columnName="CUSTOMER"/>
+    </attribute>
+    <attribute id="TXTMD" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TXTMD"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/TCUSTOMER" columnName="TXTMD"/>
+    </attribute>
+    <attribute id="LATITUDE" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="LATITUDE"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="LATITUDE"/>
+    </attribute>
+    <attribute id="LONGITUDE" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="LONGITUDE"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="LONGITUDE"/>
+    </attribute>
+    <attribute id="_BIC_AIDTCRGMC" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AIDTCRGMC"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="/BIC/AIDTCRGMC"/>
+    </attribute>
+    <attribute id="_BIC_AICDCNISS" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AICDCNISS"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="/BIC/AICDCNISS"/>
+    </attribute>
+    <attribute id="_BIC_AICACTISS" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AICACTISS"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="/BIC/AICACTISS"/>
+    </attribute>
+    <attribute id="_BIC_AICANRGMS" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AICANRGMS"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="/BIC/AICANRGMS"/>
+    </attribute>
+    <attribute id="_BIC_AISCANISC" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AISCANISC"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER" columnName="/BIC/AISCANISC"/>
+    </attribute>
+    <attribute id="SUBCANAL" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TXTSH"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/TAISCANISC" columnName="TXTSH"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/SCUSTOMER"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/TCUSTOMER"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BIC/TAISCANISC"/>
+        <columnFilter columnName="LANGU">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="S"/>
+        </columnFilter>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/SCUSTOMER"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/TCUSTOMER"/>
+        <leftColumns>
+          <columnName>CUSTOMER</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>CUSTOMER</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/SCUSTOMER"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER"/>
+        <leftColumns>
+          <columnName>CUSTOMER</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>CUSTOMER</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/PCUSTOMER"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BIC/TAISCANISC"/>
+        <leftColumns>
+          <columnName>/BIC/AISCANISC</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>/BIC/AISCANISC</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="/BI0/PCUSTOMER" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/SCUSTOMER" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="318" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/TCUSTOMER" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="566" y="30"/>
+        </shape>
+        <shape modelObjectName="/BIC/TAISCANISC" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="495" y="2229"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

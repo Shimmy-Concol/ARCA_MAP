@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_CAJA_MIXTA" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard" applyPrivilegeType="ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="AT_CAJA_MIXTA"/>
+  <metadata changedAt="2014-05-25 10:21:38.124"/>
+  <attributes>
+    <attribute id="_BIC_AIINDMIXT" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AIINDMIXT"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/SAIINDMIXT" columnName="/BIC/AIINDMIXT"/>
+    </attribute>
+    <attribute id="SID" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="SID"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/SAIINDMIXT" columnName="SID"/>
+    </attribute>
+    <attribute id="MATERIAL" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/PAIINDMIXT" columnName="MATERIAL"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BIC/PAIINDMIXT"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BIC/SAIINDMIXT"/>
+        <columnFilter columnName="/BIC/AIINDMIXT">
+          <valueFilter xsi:type="AccessControl:ListValueFilter" operator="IN" including="true">
+            <operands value="00"/>
+            <operands value="01"/>
+          </valueFilter>
+        </columnFilter>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BIC/SAIINDMIXT"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BIC/PAIINDMIXT"/>
+        <leftColumns>
+          <columnName>/BIC/AIINDMIXT</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>/BIC/AIINDMIXT</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="/BIC/PAIINDMIXT" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="/BIC/SAIINDMIXT" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="318" y="30"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

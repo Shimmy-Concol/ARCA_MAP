@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CA_GENERAL2" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="CA_GENERAL2"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="AN_GENERAL2" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/ARCA.BD/analyticviews/AN_GENERAL2</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="ID_VENTA"/>
+        <viewAttribute id="SID_0CALMONTH2"/>
+        <viewAttribute id="SID_0CALYEAR"/>
+        <viewAttribute id="SID_0WEEKDAY1"/>
+        <viewAttribute id="DIA"/>
+        <viewAttribute id="MES"/>
+        <viewAttribute id="ANIO"/>
+        <viewAttribute id="VENTA_CU"/>
+        <viewAttribute id="INGRESOS"/>
+        <viewAttribute id="IMPUESTOS"/>
+        <viewAttribute id="ING_BONIFICACION"/>
+        <viewAttribute id="TOTAL"/>
+        <viewAttribute id="_BIC_AIINDMIXT"/>
+        <viewAttribute id="ID_CAJA_MIXTA"/>
+        <viewAttribute id="MATERIAL_CAJA_MIXTA"/>
+        <viewAttribute id="ID_CUSTOMER"/>
+        <viewAttribute id="CUSTOMER"/>
+        <viewAttribute id="TEXTO_CUSTOMER"/>
+        <viewAttribute id="LAT_CUS"/>
+        <viewAttribute id="LON_CUS"/>
+        <viewAttribute id="TAMANO_CUS"/>
+        <viewAttribute id="ISSCOM"/>
+        <viewAttribute id="ACT_ISSCOM"/>
+        <viewAttribute id="CANAL_RGM"/>
+        <viewAttribute id="_BIC_AISCANISC"/>
+        <viewAttribute id="SUBCANAL"/>
+        <viewAttribute id="ID_MATERIAL"/>
+        <viewAttribute id="MATERIAL"/>
+        <viewAttribute id="TEXTO_MAT"/>
+        <viewAttribute id="MARCA"/>
+        <viewAttribute id="PRESENTACION"/>
+        <viewAttribute id="SEGMEN_AGRU"/>
+        <viewAttribute id="VALIDO"/>
+        <viewAttribute id="_BIC_Z_TAMANO"/>
+        <viewAttribute id="_BIC_Z_RETOR_N"/>
+        <viewAttribute id="ID_RUTA_REP"/>
+        <viewAttribute id="_BIC_AICTERREP"/>
+        <viewAttribute id="CANAL_VALIDO"/>
+        <viewAttribute id="_BIC_AICANAL"/>
+        <viewAttribute id="_BIC_ZPD_ZONA"/>
+        <viewAttribute id="AT_RUTA_REPARTO_PLANT"/>
+        <viewAttribute id="TRZONE"/>
+        <viewAttribute id="TXT_CEDI"/>
+        <viewAttribute id="TXT_RUTA_REPARTO"/>
+        <viewAttribute id="TXT_ZONA"/>
+        <viewAttribute id="TEXTO_TIPDOC"/>
+        <viewAttribute id="_BIC_AITPDOCTO"/>
+        <viewAttribute id="ID_TIPDOCTO"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#AN_GENERAL2">
+        <mapping xsi:type="Calculation:AttributeMapping" target="ID_VENTA" source="ID_VENTA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SID_0CALMONTH2" source="SID_0CALMONTH2"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SID_0CALYEAR" source="SID_0CALYEAR"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SID_0WEEKDAY1" source="SID_0WEEKDAY1"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DIA" source="DIA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MES" source="MES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ANIO" source="ANIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VENTA_CU" source="VENTA_CU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="INGRESOS" source="INGRESOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="IMPUESTOS" source="IMPUESTOS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ING_BONIFICACION" source="ING_BONIFICACION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TOTAL" source="TOTAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_AIINDMIXT" source="_BIC_AIINDMIXT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ID_CAJA_MIXTA" source="ID_CAJA_MIXTA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL_CAJA_MIXTA" source="MATERIAL_CAJA_MIXTA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ID_CUSTOMER" source="ID_CUSTOMER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER" source="CUSTOMER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEXTO_CUSTOMER" source="TEXTO_CUSTOMER"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAT_CUS" source="LAT_CUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LON_CUS" source="LON_CUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TAMANO_CUS" source="TAMANO_CUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ISSCOM" source="ISSCOM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ACT_ISSCOM" source="ACT_ISSCOM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CANAL_RGM" source="CANAL_RGM"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_AISCANISC" source="_BIC_AISCANISC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SUBCANAL" source="SUBCANAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ID_MATERIAL" source="ID_MATERIAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MATERIAL" source="MATERIAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEXTO_MAT" source="TEXTO_MAT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARCA" source="MARCA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="PRESENTACION" source="PRESENTACION"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="SEGMEN_AGRU" source="SEGMEN_AGRU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VALIDO" source="VALIDO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_Z_TAMANO" source="_BIC_Z_TAMANO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_Z_RETOR_N" source="_BIC_Z_RETOR_N"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ID_RUTA_REP" source="ID_RUTA_REP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_AICTERREP" source="_BIC_AICTERREP"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="CANAL_VALIDO" source="CANAL_VALIDO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_AICANAL" source="_BIC_AICANAL"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_ZPD_ZONA" source="_BIC_ZPD_ZONA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="AT_RUTA_REPARTO_PLANT" source="AT_RUTA_REPARTO_PLANT"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TRZONE" source="TRZONE"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXT_CEDI" source="TXT_CEDI"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXT_RUTA_REPARTO" source="TXT_RUTA_REPARTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TXT_ZONA" source="TXT_ZONA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEXTO_TIPDOC" source="TEXTO_TIPDOC"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="_BIC_AITPDOCTO" source="_BIC_AITPDOCTO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ID_TIPDOCTO" source="ID_TIPDOCTO"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="ID_VENTA" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_VENTAS"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ID_VENTA"/>
+      </attribute>
+      <attribute id="SID_0CALMONTH2" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_MES"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SID_0CALMONTH2"/>
+      </attribute>
+      <attribute id="SID_0CALYEAR" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_ANIO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SID_0CALYEAR"/>
+      </attribute>
+      <attribute id="SID_0WEEKDAY1" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_DIA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SID_0WEEKDAY1"/>
+      </attribute>
+      <attribute id="DIA" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DIA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="DIA"/>
+      </attribute>
+      <attribute id="MES" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MES"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MES"/>
+      </attribute>
+      <attribute id="ANIO" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANIO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ANIO"/>
+      </attribute>
+      <attribute id="VENTA_CU" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VENTA_CU"/>
+        <keyMapping columnObjectName="Projection_1" columnName="VENTA_CU"/>
+      </attribute>
+      <attribute id="_BIC_AIINDMIXT" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_AIINDMIXT"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_AIINDMIXT"/>
+      </attribute>
+      <attribute id="ID_CAJA_MIXTA" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_CAJA_MIXTA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ID_CAJA_MIXTA"/>
+      </attribute>
+      <attribute id="MATERIAL_CAJA_MIXTA" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_CAJA_MIXTA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MATERIAL_CAJA_MIXTA"/>
+      </attribute>
+      <attribute id="ID_CUSTOMER" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_CUSTOMER"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ID_CUSTOMER"/>
+      </attribute>
+      <attribute id="CUSTOMER" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CUSTOMER"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CUSTOMER"/>
+      </attribute>
+      <attribute id="TEXTO_CUSTOMER" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_CUSTOMER"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TEXTO_CUSTOMER"/>
+      </attribute>
+      <attribute id="LAT_CUS" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAT_CUS"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LAT_CUS"/>
+      </attribute>
+      <attribute id="LON_CUS" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LON_CUS"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LON_CUS"/>
+      </attribute>
+      <attribute id="TAMANO_CUS" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TAMANO_CUS"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TAMANO_CUS"/>
+      </attribute>
+      <attribute id="ISSCOM" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ISSCOM"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ISSCOM"/>
+      </attribute>
+      <attribute id="ACT_ISSCOM" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACT_ISSCOM"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ACT_ISSCOM"/>
+      </attribute>
+      <attribute id="CANAL_RGM" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CANAL_RGM"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CANAL_RGM"/>
+      </attribute>
+      <attribute id="_BIC_AISCANISC" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_AISCANISC"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_AISCANISC"/>
+      </attribute>
+      <attribute id="SUBCANAL" order="26" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TXTSH"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SUBCANAL"/>
+      </attribute>
+      <attribute id="ID_MATERIAL" order="27" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_MATERIAL"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ID_MATERIAL"/>
+      </attribute>
+      <attribute id="MATERIAL" order="28" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MATERIAL"/>
+      </attribute>
+      <attribute id="TEXTO_MAT" order="29" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_MAT"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TEXTO_MAT"/>
+      </attribute>
+      <attribute id="MARCA" order="30" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARCA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MARCA"/>
+      </attribute>
+      <attribute id="PRESENTACION" order="31" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRESENTACION"/>
+        <keyMapping columnObjectName="Projection_1" columnName="PRESENTACION"/>
+      </attribute>
+      <attribute id="SEGMEN_AGRU" order="32" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SEGMEN_AGRU"/>
+        <keyMapping columnObjectName="Projection_1" columnName="SEGMEN_AGRU"/>
+      </attribute>
+      <attribute id="VALIDO" order="33" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="VALIDO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="VALIDO"/>
+      </attribute>
+      <attribute id="TAMANO" order="34" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_Z_TAMANO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_Z_TAMANO"/>
+      </attribute>
+      <attribute id="RETORNABILIDAD" order="35" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_Z_RETOR_N"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_Z_RETOR_N"/>
+      </attribute>
+      <attribute id="ID_RUTA_REP" order="36" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_RUTA_REP"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ID_RUTA_REP"/>
+      </attribute>
+      <attribute id="_BIC_AICTERREP" order="37" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_AICTERREP"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_AICTERREP"/>
+      </attribute>
+      <attribute id="CANAL_VALIDO" order="38" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CANAL_VALIDO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="CANAL_VALIDO"/>
+      </attribute>
+      <attribute id="_BIC_AICANAL" order="39" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_AICANAL"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_AICANAL"/>
+      </attribute>
+      <attribute id="ZONAID" order="40" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_ZPD_ZONA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_ZPD_ZONA"/>
+      </attribute>
+      <attribute id="CEDIID" order="41" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PLANT"/>
+        <keyMapping columnObjectName="Projection_1" columnName="AT_RUTA_REPARTO_PLANT"/>
+      </attribute>
+      <attribute id="TRZONE" order="42" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TRZONE"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TRZONE"/>
+      </attribute>
+      <attribute id="CEDIDESC" order="43" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TXTSH"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TXT_CEDI"/>
+      </attribute>
+      <attribute id="TXT_RUTA_REPARTO" order="44" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TXTSH_1"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TXT_RUTA_REPARTO"/>
+      </attribute>
+      <attribute id="ZONADESC" order="45" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TXTSH_2"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TXT_ZONA"/>
+      </attribute>
+      <attribute id="TEXTO_TIPDOC" order="46" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_TIPDOC"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TEXTO_TIPDOC"/>
+      </attribute>
+      <attribute id="_BIC_AITPDOCTO" order="47" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_AITPDOCTO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="_BIC_AITPDOCTO"/>
+      </attribute>
+      <attribute id="ID_TIPDOCTO" order="48" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_TIPDOCTO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ID_TIPDOCTO"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="INGRESOS" order="9" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="INGRESOS"/>
+        <measureMapping columnObjectName="Projection_1" columnName="INGRESOS"/>
+      </measure>
+      <measure id="IMPUESTOS" order="10" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="IMPUESTOS"/>
+        <measureMapping columnObjectName="Projection_1" columnName="IMPUESTOS"/>
+      </measure>
+      <measure id="ING_BONIFICACION" order="11" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="ING_BONIFICACION"/>
+        <measureMapping columnObjectName="Projection_1" columnName="ING_BONIFICACION"/>
+      </measure>
+      <measure id="TOTAL" order="12" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="TOTAL"/>
+        <measureMapping columnObjectName="Projection_1" columnName="TOTAL"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="50" y="260"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="50" y="370"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

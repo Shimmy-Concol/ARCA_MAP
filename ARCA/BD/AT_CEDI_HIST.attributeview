@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_CEDI_HIST" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard">
+  <origin/>
+  <descriptions defaultDescription="AT_CEDI_HIST"/>
+  <metadata changedAt="2014-05-13 18:53:09.959" createdAt="2014-05-13 18:53:07.956"/>
+  <attributes>
+    <attribute id="PLANT" order="1" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="PLANT"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SPLANT" columnName="PLANT"/>
+    </attribute>
+    <attribute id="SID" order="2" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="SID"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SPLANT" columnName="SID"/>
+    </attribute>
+    <attribute id="TXTMD" order="3" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TXTMD"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/TPLANT" columnName="TXTMD"/>
+    </attribute>
+    <attribute id="_BIC_ZPD_ZONA" order="4" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_ZPD_ZONA"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT" columnName="/BIC/ZPD_ZONA"/>
+    </attribute>
+    <attribute id="_BIC_AIDIVISIO" order="5" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AIDIVISIO"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT" columnName="/BIC/AIDIVISIO"/>
+    </attribute>
+    <attribute id="_BIC_ZDPTERRI" order="6" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_ZDPTERRI"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT" columnName="/BIC/ZDPTERRI"/>
+    </attribute>
+    <attribute id="LATITUDE" order="7" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="LATITUDE"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT" columnName="LATITUDE"/>
+    </attribute>
+    <attribute id="LONGITUDE" order="8" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="LONGITUDE"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT" columnName="LONGITUDE"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/SPLANT"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/TPLANT"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/SPLANT"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/TPLANT"/>
+        <leftColumns>
+          <columnName>PLANT</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PLANT</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="leftOuter"/>
+      </join>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/PPLANT"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/SPLANT"/>
+        <leftColumns>
+          <columnName>PLANT</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>PLANT</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="leftOuter"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="/BI0/PPLANT" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="31" y="29"/>
+        </shape>
+        <shape modelObjectName="/BI0/SPLANT" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="291" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/TPLANT" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="512" y="30"/>
+        </shape>
+        <shape modelObjectName="DataFoundation" modelObjectNameSpace="DataFoundation" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

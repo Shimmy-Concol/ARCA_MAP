@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="d3.js"></script>
+</head>
+<body>
+Prueba de llamado a CSV.
+
+<script type="text/javascript">
+	var ruta = "cars.csv";
+	d3.csv(ruta, function(data){
+		for (var i = data.length - 1; i >= 0; i--) {
+			document.write(data[i].name + " " + data[i].cylinders);
+			document.write("<p>");
+		};
+	});
+
+
+</script>
+
+
+</body>
+</html>

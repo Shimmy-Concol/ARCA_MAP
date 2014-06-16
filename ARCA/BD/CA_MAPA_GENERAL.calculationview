@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CA_MAPA_GENERAL" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="CA_MAPA_GENERAL"/>
+  <metadata changedAt="2014-05-23 11:16:29.77"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="AN_GENERAL" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/ARCA.BD/analyticviews/AN_GENERAL</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews>
+    <calculationView xsi:type="Calculation:ProjectionView" id="Projection_1">
+      <viewAttributes>
+        <viewAttribute id="LAT_CUS">
+          <filter xsi:type="AccessControl:SingleValueFilter" including="false" value="0"/>
+        </viewAttribute>
+        <viewAttribute id="LON_CUS">
+          <filter xsi:type="AccessControl:SingleValueFilter" including="false" value="0"/>
+        </viewAttribute>
+        <viewAttribute id="DIA"/>
+        <viewAttribute id="MES"/>
+        <viewAttribute id="ANIO"/>
+        <viewAttribute id="VENTA_CU"/>
+        <viewAttribute id="TEXTO_CEDI_HIST"/>
+        <viewAttribute id="MARCA"/>
+      </viewAttributes>
+      <calculatedViewAttributes/>
+      <input node="#AN_GENERAL">
+        <mapping xsi:type="Calculation:AttributeMapping" target="LAT_CUS" source="LAT_CUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="LON_CUS" source="LON_CUS"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="DIA" source="DIA"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MES" source="MES"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="ANIO" source="ANIO"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="VENTA_CU" source="VENTA_CU"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="TEXTO_CEDI_HIST" source="TEXTO_CEDI_HIST"/>
+        <mapping xsi:type="Calculation:AttributeMapping" target="MARCA" source="MARCA"/>
+      </input>
+    </calculationView>
+  </calculationViews>
+  <logicalModel id="Projection_1">
+    <attributes>
+      <attribute id="LAT_CUS" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAT_CUS"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LAT_CUS"/>
+      </attribute>
+      <attribute id="LON_CUS" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LON_CUS"/>
+        <keyMapping columnObjectName="Projection_1" columnName="LON_CUS"/>
+      </attribute>
+      <attribute id="DIA" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DIA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="DIA"/>
+      </attribute>
+      <attribute id="MES" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MES"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MES"/>
+      </attribute>
+      <attribute id="ANIO" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANIO"/>
+        <keyMapping columnObjectName="Projection_1" columnName="ANIO"/>
+      </attribute>
+      <attribute id="TEXTO_CEDI_HIST" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_CEDI_HIST"/>
+        <keyMapping columnObjectName="Projection_1" columnName="TEXTO_CEDI_HIST"/>
+      </attribute>
+      <attribute id="MARCA" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARCA"/>
+        <keyMapping columnObjectName="Projection_1" columnName="MARCA"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="VENTA_CU" order="6" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="VENTA_CU"/>
+        <measureMapping columnObjectName="Projection_1" columnName="VENTA_CU"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="50" y="260"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+      <shape expanded="true" modelObjectName="Projection_1" modelObjectNameSpace="CalculationView">
+        <upperLeftCorner x="50" y="370"/>
+        <rectangleSize height="-1" width="-1"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>

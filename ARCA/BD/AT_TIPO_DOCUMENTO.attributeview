@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_TIPO_DOCUMENTO" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard" applyPrivilegeType="ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="AT_TIPO_DOCUMENTO"/>
+  <metadata changedAt="2014-05-26 11:55:30.81"/>
+  <attributes>
+    <attribute id="TXTSH" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TXTSH"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/TAITPDOCTO" columnName="TXTSH"/>
+    </attribute>
+    <attribute id="_BIC_AITPDOCTO" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AITPDOCTO"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/SAITPDOCTO" columnName="/BIC/AITPDOCTO"/>
+    </attribute>
+    <attribute id="SID" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="SID"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/SAITPDOCTO" columnName="SID"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BIC/SAITPDOCTO"/>
+        <columnFilter columnName="/BIC/AITPDOCTO">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="1"/>
+        </columnFilter>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BIC/TAITPDOCTO"/>
+        <columnFilter columnName="LANGU">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="S"/>
+        </columnFilter>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BIC/SAITPDOCTO"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BIC/TAITPDOCTO"/>
+        <leftColumns>
+          <columnName>/BIC/AITPDOCTO</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>/BIC/AITPDOCTO</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="/BIC/SAITPDOCTO" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="/BIC/TAITPDOCTO" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="321" y="30"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

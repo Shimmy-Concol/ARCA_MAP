@@ -1,0 +1,357 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Cube:cube xmlns:Cube="http://www.sap.com/ndb/BiModelCube.ecore" schemaVersion="1.5" id="AN_GENERAL" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled">
+  <origin/>
+  <descriptions defaultDescription="AN_GENERAL"/>
+  <metadata changedAt="2014-05-13 18:53:23.525" createdAt="2014-05-13 18:51:54.156"/>
+  <localVariables/>
+  <privateMeasureGroup id="MeasureGroup">
+    <attributes>
+      <attribute id="ID_VENTA" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_VENTAS"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="KEY_ZIVT_C007P"/>
+      </attribute>
+      <attribute id="SID_0CALMONTH2" hidden="true" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_MES"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0CALMONTH2"/>
+      </attribute>
+      <attribute id="SID_0CALYEAR" hidden="true" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_ANIO"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0CALYEAR"/>
+      </attribute>
+      <attribute id="SID_0WEEKDAY1" hidden="true" order="4" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ID_DIA"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0WEEKDAY1"/>
+      </attribute>
+      <attribute id="DIA" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DIA"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SWEEKDAY1" columnName="WEEKDAY1"/>
+      </attribute>
+      <attribute id="MES" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MES"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SCALMONTH2" columnName="CALMONTH2"/>
+      </attribute>
+      <attribute id="ANIO" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANIO"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SCALYEAR" columnName="CALYEAR"/>
+      </attribute>
+      <attribute id="SID_AIINDMIXT" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_AIINDMIXT"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_AIINDMIXT"/>
+      </attribute>
+      <attribute id="SID_0SOLD_TO" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_0SOLD_TO"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0SOLD_TO"/>
+      </attribute>
+      <attribute id="SID_0MATERIAL" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_0MATERIAL"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0MATERIAL"/>
+      </attribute>
+      <attribute id="SID_0TRZONE" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_0TRZONE"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0TRZONE"/>
+      </attribute>
+      <attribute id="SID_AICTERREP" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_AICTERREP"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_AICTERREP"/>
+      </attribute>
+      <attribute id="SID_0PLANT" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_0PLANT"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_0PLANT"/>
+      </attribute>
+      <attribute id="SID_AITPDOCTO" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SID_AITPDOCTO"/>
+        <keyMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="SID_AITPDOCTO"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies>
+        <tableProxy centralTable="true">
+          <table schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007"/>
+        </tableProxy>
+        <tableProxy>
+          <table schemaName="SAPW1Q" columnObjectName="/BI0/SWEEKDAY1"/>
+        </tableProxy>
+        <tableProxy>
+          <table schemaName="SAPW1Q" columnObjectName="/BI0/SCALYEAR"/>
+        </tableProxy>
+        <tableProxy>
+          <table schemaName="SAPW1Q" columnObjectName="/BI0/SCALMONTH2"/>
+        </tableProxy>
+      </tableProxies>
+      <joins>
+        <join>
+          <leftTable schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007"/>
+          <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/SWEEKDAY1"/>
+          <leftColumns>
+            <columnName>SID_0WEEKDAY1</columnName>
+          </leftColumns>
+          <rightColumns>
+            <columnName>SID</columnName>
+          </rightColumns>
+          <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        </join>
+        <join>
+          <leftTable schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007"/>
+          <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/SCALYEAR"/>
+          <leftColumns>
+            <columnName>SID_0CALYEAR</columnName>
+          </leftColumns>
+          <rightColumns>
+            <columnName>SID</columnName>
+          </rightColumns>
+          <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        </join>
+        <join>
+          <leftTable schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007"/>
+          <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/SCALMONTH2"/>
+          <leftColumns>
+            <columnName>SID_0CALMONTH2</columnName>
+          </leftColumns>
+          <rightColumns>
+            <columnName>SID</columnName>
+          </rightColumns>
+          <properties joinOperator="Equal" joinType="referential"/>
+        </join>
+      </joins>
+      <layout>
+        <shapes>
+          <shape modelObjectName="/BIC/FZIVT_C007" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+            <upperLeftCorner x="70" y="30"/>
+          </shape>
+          <shape modelObjectName="/BI0/SWEEKDAY1" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+            <upperLeftCorner x="388" y="355"/>
+          </shape>
+          <shape modelObjectName="/BI0/SCALYEAR" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+            <upperLeftCorner x="448" y="209"/>
+          </shape>
+          <shape modelObjectName="/BI0/SCALMONTH2" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+            <upperLeftCorner x="370" y="37"/>
+          </shape>
+        </shapes>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="VENTA_CU" order="8" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="VENTA_CU"/>
+        <measureMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="/BIC/ARCJUNIDA"/>
+      </measure>
+      <measure id="INGRESOS" order="9" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="INGRESOS"/>
+        <measureMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="NETVAL_INV"/>
+      </measure>
+      <measure id="IMPUESTOS" order="10" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="IMPUESTOS"/>
+        <measureMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="/BIC/ARIMPUEST"/>
+      </measure>
+      <measure id="ING_BONIFICACION" order="11" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="ING_BONIFICACION"/>
+        <measureMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="/BIC/ARBONIFIC"/>
+      </measure>
+      <measure id="TOTAL" order="12" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="TOTAL"/>
+        <measureMapping schemaName="SAPW1Q" columnObjectName="/BIC/FZIVT_C007" columnName="/BIC/ARIMPIEPS"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <sharedDimensions>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_CAJA_MIXTA">
+        <attributes>
+          <attributeRef>#SID_AIINDMIXT</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="C1_N" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="ID_CAJA_MIXTA" attributeName="SID">
+            <descriptions defaultDescription="ID_CAJA_MIXTA"/>
+          </attributeReference>
+          <attributeReference alias="MATERIAL_CAJA_MIXTA" attributeName="MATERIAL">
+            <descriptions defaultDescription="MATERIAL_CAJA_MIXTA"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_CEDI_HIST">
+        <attributes>
+          <attributeRef>#SID_0PLANT</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="ID_CEDI_HIST" attributeName="SID">
+            <descriptions defaultDescription="ID_CEDI_HIST"/>
+          </attributeReference>
+          <attributeReference alias="TEXTO_CEDI_HIST" attributeName="TXTMD">
+            <descriptions defaultDescription="TEXTO_CEDI_HIST"/>
+          </attributeReference>
+          <attributeReference alias="ZONA_CEDI_HIST" attributeName="_BIC_ZPD_ZONA">
+            <descriptions defaultDescription="ZONA_CEDI_HIST"/>
+          </attributeReference>
+          <attributeReference alias="DIVISION_CEDI_HIST" attributeName="_BIC_AIDIVISIO">
+            <descriptions defaultDescription="DIVISION_CEDI_HIST"/>
+          </attributeReference>
+          <attributeReference alias="TERRITORIO" attributeName="_BIC_ZDPTERRI">
+            <descriptions defaultDescription="TERRITOTIO"/>
+          </attributeReference>
+          <attributeReference alias="LAT_CEDI" attributeName="LATITUDE">
+            <descriptions defaultDescription="LAT_CEDI"/>
+          </attributeReference>
+          <attributeReference alias="LON_CEDI" attributeName="LONGITUDE">
+            <descriptions defaultDescription="LON_CEDI"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_CUSTOMER">
+        <attributes>
+          <attributeRef>#SID_0SOLD_TO</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="ID_CUSTOMER" attributeName="SID">
+            <descriptions defaultDescription="ID_CUSTOMER"/>
+          </attributeReference>
+          <attributeReference alias="TEXTO_CUSTOMER" attributeName="TXTMD">
+            <descriptions defaultDescription="TEXTO_CUSTOMER"/>
+          </attributeReference>
+          <attributeReference alias="LAT_CUS" attributeName="LATITUDE">
+            <descriptions defaultDescription="LAT_CUS"/>
+          </attributeReference>
+          <attributeReference alias="LON_CUS" attributeName="LONGITUDE">
+            <descriptions defaultDescription="LON_CUS"/>
+          </attributeReference>
+          <attributeReference alias="TAMANO_CUS" attributeName="_BIC_AIDTCRGMC">
+            <descriptions defaultDescription="TAMANO_CUS"/>
+          </attributeReference>
+          <attributeReference alias="ISSCOM" attributeName="_BIC_AICDCNISS">
+            <descriptions defaultDescription="ISSCOM"/>
+          </attributeReference>
+          <attributeReference alias="ACT_ISSCOM" attributeName="_BIC_AICACTISS">
+            <descriptions defaultDescription="ACT_ISSCOM"/>
+          </attributeReference>
+          <attributeReference alias="CANAL_RGM" attributeName="_BIC_AICANRGMS">
+            <descriptions defaultDescription="CANAL_RGM"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_MATERIAL">
+        <attributes>
+          <attributeRef>#SID_0MATERIAL</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="ID_MATERIAL" attributeName="SID">
+            <descriptions defaultDescription="ID_MATERIAL"/>
+          </attributeReference>
+          <attributeReference alias="TEXTO_MAT" attributeName="TXTMD">
+            <descriptions defaultDescription="TEXTO_MAT"/>
+          </attributeReference>
+          <attributeReference alias="MARCA" attributeName="_BIC_Z_MARCA">
+            <descriptions defaultDescription="MARCA"/>
+          </attributeReference>
+          <attributeReference alias="PRESENTACION" attributeName="_BIC_Z_PRESENT">
+            <descriptions defaultDescription="PRESENTACION"/>
+          </attributeReference>
+          <attributeReference alias="SEGMEN_AGRU" attributeName="_BIC_Z_SEG_AGR">
+            <descriptions defaultDescription="SEGMEN_AGRU"/>
+          </attributeReference>
+          <attributeReference alias="VALIDO" attributeName="_BIC_AIPRESAGR">
+            <descriptions defaultDescription="VALIDO"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_RUTA_REPARTO">
+        <attributes>
+          <attributeRef>#SID_AICTERREP</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="ID_RUTA_REP" attributeName="SID">
+            <descriptions defaultDescription="ID_RUTA_REP"/>
+          </attributeReference>
+          <attributeReference alias="CANAL_VALIDO" attributeName="_BIC_AICANVALI">
+            <descriptions defaultDescription="CANAL_VALIDO"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_RUTA_ZONE">
+        <attributes>
+          <attributeRef>#SID_0TRZONE</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="ID_TRZONE" attributeName="SID">
+            <descriptions defaultDescription="ID_TRZONE"/>
+          </attributeReference>
+          <attributeReference alias="TEXTO_ZONE" attributeName="TXTMD">
+            <descriptions defaultDescription="TEXTO_ZONE"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+      <logicalJoin associatedObjectUri="/ARCA.BD/attributeviews/AT_TIPO_DOCUMENTO">
+        <attributes>
+          <attributeRef>#SID_AITPDOCTO</attributeRef>
+        </attributes>
+        <associatedAttributeNames>
+          <attributeName>SID</attributeName>
+        </associatedAttributeNames>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+        <associatedAttributeFeatures>
+          <attributeReference alias="TEXTO_TIPDOC" attributeName="TXTSH">
+            <descriptions defaultDescription="TEXTO_TIPDOC"/>
+          </attributeReference>
+          <attributeReference alias="ID_TIPDOCTO" attributeName="SID">
+            <descriptions defaultDescription="ID_TIPDOCTO"/>
+          </attributeReference>
+        </associatedAttributeFeatures>
+      </logicalJoin>
+    </sharedDimensions>
+    <layout>
+      <shapes>
+        <shape modelObjectName="MEASURE_GROUP" modelObjectType="repository">
+          <upperLeftCorner x="1009" y="456"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_CAJA_MIXTA.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="194" y="622"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_CEDI_HIST.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="649" y="25"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_CUSTOMER.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="157" y="402"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_MATERIAL.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="459" y="765"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_RUTA_REPARTO.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="115" y="209"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_RUTA_ZONE.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="153" y="25"/>
+        </shape>
+        <shape modelObjectName="/ARCA_MAPA.DB/attributeviews/AT_TIPO_DOCUMENTO.attributeview" modelObjectType="repository">
+          <upperLeftCorner x="1313" y="151"/>
+        </shape>
+        <shape modelObjectName="LogicalView" modelObjectNameSpace="MeasureGroup" modelObjectType="repository">
+          <upperLeftCorner x="40" y="85"/>
+          <rectangleSize/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateMeasureGroup>
+</Cube:cube>

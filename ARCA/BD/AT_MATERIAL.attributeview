@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:AccessControl="http://www.sap.com/ndb/SQLCoreModelAccessControl.ecore" xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_MATERIAL" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard" applyPrivilegeType="ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="AT_MATERIAL"/>
+  <metadata changedAt="2014-05-26 10:36:28.058"/>
+  <attributes>
+    <attribute id="SID" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="SID"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SMATERIAL" columnName="SID"/>
+    </attribute>
+    <attribute id="MATERIAL" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="MATERIAL"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/SMATERIAL" columnName="MATERIAL"/>
+    </attribute>
+    <attribute id="TXTMD" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TXTMD"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/TMATERIAL" columnName="TXTMD"/>
+    </attribute>
+    <attribute id="_BIC_Z_MARCA" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_Z_MARCA"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL" columnName="/BIC/Z_MARCA"/>
+    </attribute>
+    <attribute id="_BIC_Z_PRESENT" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_Z_PRESENT"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL" columnName="/BIC/Z_PRESENT"/>
+    </attribute>
+    <attribute id="_BIC_Z_SEG_AGR" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_Z_SEG_AGR"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL" columnName="/BIC/Z_SEG_AGR"/>
+    </attribute>
+    <attribute id="_BIC_AIPRESAGR" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_AIPRESAGR"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL" columnName="/BIC/AIPRESAGR"/>
+    </attribute>
+    <attribute id="_BIC_Z_TAMANO" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_Z_TAMANO"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL" columnName="/BIC/Z_TAMANO"/>
+    </attribute>
+    <attribute id="_BIC_Z_RETOR_N" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="_BIC_Z_RETOR_N"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL" columnName="/BIC/Z_RETOR_N"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL"/>
+        <columnFilter columnName="/BIC/AIPRESAGR">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="01"/>
+        </columnFilter>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/SMATERIAL"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/TMATERIAL"/>
+        <columnFilter columnName="LANGU">
+          <valueFilter xsi:type="AccessControl:SingleValueFilter" including="true" value="S"/>
+        </columnFilter>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/SMATERIAL"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/TMATERIAL"/>
+        <leftColumns>
+          <columnName>MATERIAL</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>MATERIAL</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="referential"/>
+      </join>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/PMATERIAL"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/SMATERIAL"/>
+        <leftColumns>
+          <columnName>MATERIAL</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>MATERIAL</columnName>
+        </rightColumns>
+        <properties cardinality="C1_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="/BI0/PMATERIAL" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="70" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/SMATERIAL" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="312" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/TMATERIAL" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="554" y="30"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

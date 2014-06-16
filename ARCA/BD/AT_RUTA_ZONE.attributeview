@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Dimension:dimension xmlns:Dimension="http://www.sap.com/ndb/BiModelDimension.ecore" schemaVersion="1.2" id="AT_RUTA_ZONE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="internal" dimensionType="Standard" applyPrivilegeType="ANALYTIC_PRIVILEGE">
+  <origin/>
+  <descriptions defaultDescription="AT_RUTA_ZONE"/>
+  <metadata changedAt="2014-05-26 11:12:13.0"/>
+  <attributes>
+    <attribute id="TRZONE" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TRZONE"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/STRZONE" columnName="TRZONE"/>
+    </attribute>
+    <attribute id="SID" attributeHierarchyActive="false" displayAttribute="false" key="true">
+      <descriptions defaultDescription="SID"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/STRZONE" columnName="SID"/>
+    </attribute>
+    <attribute id="TXTMD" attributeHierarchyActive="false" displayAttribute="false">
+      <descriptions defaultDescription="TXTMD"/>
+      <keyMapping schemaName="SAPW1Q" columnObjectName="/BI0/TTRZONE" columnName="TXTMD"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <privateDataFoundation>
+    <tableProxies>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/STRZONE"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/TTRZONE"/>
+      </tableProxy>
+      <tableProxy>
+        <table schemaName="SAPW1Q" columnObjectName="/BI0/PTRZONE"/>
+      </tableProxy>
+    </tableProxies>
+    <joins>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/STRZONE"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/TTRZONE"/>
+        <leftColumns>
+          <columnName>TRZONE</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>TRZONE</columnName>
+        </rightColumns>
+        <properties cardinality="CN_1" joinOperator="Equal" joinType="referential"/>
+      </join>
+      <join>
+        <leftTable schemaName="SAPW1Q" columnObjectName="/BI0/PTRZONE"/>
+        <rightTable schemaName="SAPW1Q" columnObjectName="/BI0/STRZONE"/>
+        <leftColumns>
+          <columnName>TRZONE</columnName>
+        </leftColumns>
+        <rightColumns>
+          <columnName>TRZONE</columnName>
+        </rightColumns>
+        <properties joinOperator="Equal" joinType="rightOuter"/>
+      </join>
+    </joins>
+    <layout>
+      <shapes>
+        <shape modelObjectName="/BI0/STRZONE" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="300" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/TTRZONE" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="530" y="30"/>
+        </shape>
+        <shape modelObjectName="/BI0/PTRZONE" modelObjectNameSpace="SAPW1Q" modelObjectType="catalog">
+          <upperLeftCorner x="73" y="27"/>
+        </shape>
+      </shapes>
+    </layout>
+  </privateDataFoundation>
+  <hierarchies/>
+</Dimension:dimension>

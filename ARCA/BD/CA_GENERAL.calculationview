@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" schemaVersion="2.2" id="CA_GENERAL" applyPrivilegeType="ANALYTIC_PRIVILEGE" checkAnalyticPrivileges="true" defaultClient="$$client$$" defaultLanguage="$$language$$" visibility="reportingEnabled" calculationScenarioType="TREE_BASED" dataCategory="CUBE" enforceSqlExecution="false" executionSemantic="UNDEFINED" outputViewType="Projection">
+  <origin/>
+  <descriptions defaultDescription="CA_GENERAL"/>
+  <metadata changedAt="2014-05-15 16:58:40.92"/>
+  <localVariables/>
+  <variableMappings/>
+  <dataSources>
+    <DataSource id="AN_GENERAL" type="ANALYTIC_VIEW">
+      <viewAttributes allViewAttributes="true"/>
+      <resourceUri>/ARCA.BD/analyticviews/AN_GENERAL</resourceUri>
+    </DataSource>
+  </dataSources>
+  <calculationViews/>
+  <logicalModel id="AN_GENERAL">
+    <attributes>
+      <attribute id="TEXTO_CUSTOMER" order="1" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_CUSTOMER"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="TEXTO_CUSTOMER"/>
+      </attribute>
+      <attribute id="LAT_CUS" order="2" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAT_CUS"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="LAT_CUS"/>
+      </attribute>
+      <attribute id="LON_CUS" order="3" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LON_CUS"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="LON_CUS"/>
+      </attribute>
+      <attribute id="DIA" order="5" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DIA"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="DIA"/>
+      </attribute>
+      <attribute id="MES" order="6" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MES"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="MES"/>
+      </attribute>
+      <attribute id="ANIO" order="7" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ANIO"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="ANIO"/>
+      </attribute>
+      <attribute id="MATERIAL_CAJA_MIXTA" order="8" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MATERIAL_CAJA_MIXTA"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="MATERIAL_CAJA_MIXTA"/>
+      </attribute>
+      <attribute id="PLANT" order="9" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PLANT"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="PLANT"/>
+      </attribute>
+      <attribute id="TEXTO_CEDI_HIST" order="10" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_CEDI_HIST"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="TEXTO_CEDI_HIST"/>
+      </attribute>
+      <attribute id="ZONA_CEDI_HIST" order="11" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ZONA_CEDI_HIST"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="ZONA_CEDI_HIST"/>
+      </attribute>
+      <attribute id="DIVISION_CEDI_HIST" order="12" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="DIVISION_CEDI_HIST"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="DIVISION_CEDI_HIST"/>
+      </attribute>
+      <attribute id="TERRITORIO" order="13" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TERRITOTIO"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="TERRITORIO"/>
+      </attribute>
+      <attribute id="LAT_CEDI" order="14" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LAT_CEDI"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="LAT_CEDI"/>
+      </attribute>
+      <attribute id="LON_CEDI" order="15" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="LON_CEDI"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="LON_CEDI"/>
+      </attribute>
+      <attribute id="TAMANO_CUS" order="16" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TAMANO_CUS"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="TAMANO_CUS"/>
+      </attribute>
+      <attribute id="ISSCOM" order="17" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ISSCOM"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="ISSCOM"/>
+      </attribute>
+      <attribute id="ACT_ISSCOM" order="18" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="ACT_ISSCOM"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="ACT_ISSCOM"/>
+      </attribute>
+      <attribute id="CANAL_RGM" order="19" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="CANAL_RGM"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="CANAL_RGM"/>
+      </attribute>
+      <attribute id="MARCA" order="20" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="MARCA"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="MARCA"/>
+      </attribute>
+      <attribute id="PRESENTACION" order="21" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="PRESENTACION"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="PRESENTACION"/>
+      </attribute>
+      <attribute id="SEGMEN_AGRU" order="22" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="SEGMEN_AGRU"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="SEGMEN_AGRU"/>
+      </attribute>
+      <attribute id="_BIC_Z_TAMANO" order="23" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_Z_TAMANO"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="_BIC_Z_TAMANO"/>
+      </attribute>
+      <attribute id="_BIC_Z_RETOR_N" order="24" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="_BIC_Z_RETOR_N"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="_BIC_Z_RETOR_N"/>
+      </attribute>
+      <attribute id="TEXTO_ZONE" order="25" attributeHierarchyActive="false" displayAttribute="false">
+        <descriptions defaultDescription="TEXTO_ZONE"/>
+        <keyMapping columnObjectName="AN_GENERAL" columnName="TEXTO_ZONE"/>
+      </attribute>
+    </attributes>
+    <calculatedAttributes/>
+    <privateDataFoundation>
+      <tableProxies/>
+      <joins/>
+      <layout>
+        <shapes/>
+      </layout>
+    </privateDataFoundation>
+    <baseMeasures>
+      <measure id="VENTA_CU" order="4" aggregationType="sum" measureType="simple">
+        <descriptions defaultDescription="VENTA_CU"/>
+        <measureMapping columnObjectName="AN_GENERAL" columnName="VENTA_CU"/>
+      </measure>
+    </baseMeasures>
+    <calculatedMeasures/>
+    <restrictedMeasures/>
+    <localDimensions/>
+  </logicalModel>
+  <layout>
+    <shapes>
+      <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+        <upperLeftCorner x="50" y="260"/>
+        <rectangleSize height="0" width="0"/>
+      </shape>
+    </shapes>
+  </layout>
+</Calculation:scenario>
